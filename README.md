@@ -100,7 +100,32 @@ Vérifiez que les pods et services Node.js sont en cours d'exécution :
 kubectl get pods
 kubectl get services
 
+kubectl port-forward svc/nodejs-service 3000:3000
+
+### 🖥 Déploiement de l'Application Web React
+
+#### Créer un Dockerfile pour l’application React.js.
+
+#### Construire et pousser l’image Docker :
+
+docker build -t votre-utilisateur/frontend:latest .
+docker push votre-utilisateur/frontend:latest
+
+#### Créer et Appliquer les fichiers YAML pour le déploiement React.js :
+
+kubectl apply -f [frontend-deployment.yaml](http://_vscodecontentref_/1)
+kubectl apply -f [frontend-service.yaml](http://_vscodecontentref_/2)
+
+### 🔍 Tester les Pods et Services de l'Application Node.js
+
+Vérifiez que les pods et services Node.js sont en cours d'exécution :
+
+kubectl get pods
+kubectl get services
+
 ### 🌐 Accéder à l'Application Web
+
+kubectl port-forward svc/frontend-service 8080:80
 
 #### Obtenez l'IP du nœud Minikube :
 
@@ -132,7 +157,7 @@ kubectl delete pod <nodejs-pod-name>
 
 #### Utilisez kubectl port-forward pour accéder à l'application :
 
-kubectl port-forward svc/nodejs-service 3000:3000
+kubectl port-forward svc/frontend-service 8080:80
 
 #### Testez la connexion à l'application :
 
