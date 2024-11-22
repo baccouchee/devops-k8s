@@ -5,6 +5,7 @@
 ### Objectif Principal
 
 Fournir un guide complet pour déployer une application web full-stack sur un cluster Kubernetes local en utilisant Minikube, comprenant :
+
 - Une base de données PostgreSQL
 - Un backend Node.js
 - Un frontend React
@@ -61,6 +62,7 @@ minikube start
 ### Étape 2 : Gestion de la Configuration
 
 #### ConfigMap
+
 ```yaml
 apiVersion: v1
 kind: ConfigMap
@@ -73,6 +75,7 @@ data:
 ```
 
 #### Secrets
+
 ```yaml
 apiVersion: v1
 kind: Secret
@@ -85,6 +88,7 @@ data:
 ```
 
 #### Application de la Configuration
+
 ```bash
 kubectl apply -f configmap.yaml
 kubectl apply -f secret.yaml
@@ -100,6 +104,7 @@ kubectl apply -f postgres-service.yaml
 ### Étape 4 : Déploiement du Backend Node.js
 
 #### Dockerfile du Backend
+
 ```dockerfile
 # Étape de construction
 FROM node:16-alpine AS builder
@@ -119,6 +124,7 @@ CMD ["npm", "start"]
 ```
 
 #### Construction et Déploiement
+
 ```bash
 docker build -t utilisateur/backend-nodejs:latest .
 docker push utilisateur/backend-nodejs:latest
@@ -128,6 +134,7 @@ kubectl apply -f nodejs-deployment.yaml
 ### Étape 5 : Déploiement du Frontend React
 
 #### Dockerfile Frontend
+
 ```dockerfile
 # Étape de construction
 FROM node:16-alpine AS builder
@@ -145,6 +152,7 @@ CMD ["nginx", "-g", "daemon off;"]
 ```
 
 #### Construction et Déploiement
+
 ```bash
 docker build -t utilisateur/frontend-react:latest .
 docker push utilisateur/frontend-react:latest
@@ -154,6 +162,7 @@ kubectl apply -f frontend-deployment.yaml
 ## 🔍 Vérification et Surveillance
 
 ### Commandes de Vérification
+
 ```bash
 kubectl get pods
 kubectl get services
