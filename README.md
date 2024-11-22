@@ -19,7 +19,7 @@ Fournir un guide complet pour déployer une application web full-stack sur un cl
 
 ## 🛠 Technologies Utilisées
 
-- **Conteneurisation** : Docker
+- **Conteneurisation** : Dsocker
 - **Orchestration** : Kubernetes (Minikube)
 - **Backend** : Node.js
 - **Base de données** : PostgreSQL
