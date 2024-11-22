@@ -15,7 +15,7 @@ Fournir un guide complet pour déployer une application web full-stack sur un cl
 - Créer un environnement de déploiement Kubernetes reproductible
 - Démontrer une architecture de microservices
 - Fournir des instructions de déploiement détaillées
-- Présenter less meilleures pratiques de conteneurisation et d'orchestration
+- Présenter les meilleures pratiques de conteneurisation et d'orchestration
 
 ## 🛠 Technologies Utilisées
 
