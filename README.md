@@ -2,6 +2,8 @@
 
 ## 📘 Aperçu du Projet
 
+- commentaire
+
 ### Objectif Principal
 
 Fournir un guide complet pour déployer une application web full-stack sur un cluster Kubernetes local en utilisant Minikube, comprenant :
